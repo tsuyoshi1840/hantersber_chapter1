@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>HANTER'sBer</title>
+    
+</head>
+
+
+<body>
+<header>
+      
+      <div class="header">
+      <nav class="nav-list">
+      <h1 class ="hero-header-h1">狩人の酒場</h1> 
+      <ul>
+        <li><a href="index.html">🏠TOP</a></li>
+        <li><a href="weapon.html">⚔武器</a></li>
+        <li><a href="accessories.html">💍アクセサリー</a></li>
+        <li><a href="item.html">☕消耗品</a></li>
+      </ul>
+      </nav>
+      </div>
+
+</header>
+
+<!--  -->
+         <h1 class="hero contact">お問い合わせ</h1>
+    <main>
+        <img src="gif-anime.gif" class="Skills-efect-img" alt="">
+        <form action="result.html">
+        <p>お問い合わせの種類<br>
+        <select name="kind">
+            <!-- リストボックスにリストを挿入　今後多分PHPで作成 -->
+            <option value="1">レイドクエストのご予約</option>
+            <option value="2">クエスト依頼破棄の申出</option>
+            <option value="3">パーティの解散手続き</option>
+        </select>
+        </p>
+        <p>初めてのご来店ですか<br>
+            <input type="radio" name="first" value="yes" checked>はい<br>
+            <input type="radio" name="first" value="No" checked>いいえ
+        </p>
+        <p>当酒場をお知りになったきっかけは？<br>
+            <input type="checkbox" name="how" value="friend">知り合いのシーフの紹介で<br>
+            <input type="checkbox" name="how" value="friend">ダンジョンで息絶えた冒険者などを見て
+        </p>
+        <p>お問い合わせの件名<br>
+            <input type="text" name="subject" placeholder="タイトル">
+        </p>
+        <p>お問い合わせの具体的な内容<br>
+            <textarea name="message"></textarea>
+        </p>
+        <p class="submit">
+                <input type="submit" value="送信">
+        </p>
+    </form>
+
+    </main>
+    <!--  -->
+
+
+    <footer class="site-footer">
+        <ul class="footer-links">
+        <li><a href="kiyaku.html">利用規約</a></li>
+        <li><a href="policy.html">プライバシーポリシー</a></li>
+        <li><a href="conntact.html">お問い合わせ</a></li>
+        </ul>
+    </footer>
+</body>

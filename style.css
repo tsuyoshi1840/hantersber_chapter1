@@ -1,0 +1,252 @@
+@charset "utf-8";
+/* @import url('https://googleapis.com'); */
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Rampart+One&family=Zen+Maru+Gothic&display=swap');
+
+/* すべてのページに適用される設定 */
+html {
+  font-family: "DotGothic16", sans-serif;
+  background-color: #09121d;
+  color: #ffffff;               
+}
+a, a:visited {
+  color: #ffffff !important;       
+  text-decoration: none;     
+}
+
+/* ==========================================================================
+   ヘッダー（背景画像：room02.png）
+   ========================================================================== */
+.header {
+  text-shadow: 2px 2px 1px #09121d, -2px -2px 1px #09121d;
+  background-image: url('./picture/room02.png'); 
+  display: flex; 
+  flex-direction: column;    
+  justify-content: center;   /* メニューを縦方向のど真ん中に配置 */
+  align-items: center;       /* メニューを横方向のど真ん中に配置 */
+  background-size: cover;          
+  background-repeat: no-repeat;    
+  background-position: center;     
+  height: 250px;    
+  position: relative;        /* 狩人の酒場を絶対配置するための基準 */
+}
+
+/* 「狩人の酒場」を背景画像の左上に固定 */
+.hero-header-h1 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  margin: 0; 
+  z-index: 10;
+}
+.header .nav-list a {
+  font-size: 20px; /* お好みの大きさに調整してください */
+}
+
+/* ==========================================================================
+   メインビジュアル
+   ========================================================================== */
+.hero-header {
+  background-image: url('./picture/house.png');
+  background-size: cover; 
+  background-position: center bottom;
+  background-repeat: no-repeat;     
+  max-width: 1200px;            
+  height: 200px;                
+  display: flex;                
+  align-items: center;          
+  justify-content: flex-start;  
+  text-shadow: 2px 2px 4px #09121d, -2px -2px 4px #09121d;
+  text-align: left;             
+  border: 6px double #ffffff;   
+  padding: 0px 20px;
+  margin: 20px auto;            
+  position: relative; 
+}
+
+/* ==========================================================================
+   メニューバー
+   ========================================================================== */
+.nav-list a {
+  font-size: 20px;
+}
+.nav-list ul {
+  justify-content: center;
+  display: flex;     
+  list-style: none;  
+  gap: 15px;         
+  padding: 0;        
+  padding-left: 15px; 
+  padding-right: 15px;
+  margin: 0;         
+}  
+.nav-list li:hover {   
+  transform: translateX(5px); 
+  transition: all 0.5s ease;
+}
+.nav-list li:hover::before {
+  content: "▶";
+}
+.nav-list li {
+  list-style: none;  
+}
+
+/* ==========================================================================
+   アイテムリスト
+   ========================================================================== */
+.top-items {
+  gap: 5px;  
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  text-align: center;      
+  transition: border-color 0.2s ease;
+}
+
+/* おすすめ・カテゴリの画像を共通でサイズ固定 */
+.top-items img {
+  width: 128px;
+  height: 128px;
+  image-rendering: pixelated; /* ドット絵をクッキリさせる */
+}
+
+/* アイテムの枠の部分 */
+.items {    
+  border: 2px solid #0387f9;      
+  background-color: #09121d;       
+  color: #fff8e7;
+  transition: border-color 0.5s ease;                 
+  transition: background-color 0.5s ease;                 
+  display: flex;
+  flex-direction: column;   /* 上から下に1列で並べる */
+  align-items: center;      /* 中身をすべて中央揃えにする */
+  justify-content: space-between; /* 上下のパーツの間隔を均等にする */
+  padding: 15px;   
+}
+.items:hover {
+  background-color: #310a13;       
+  border-color: #ffd700; 
+}
+.main-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;        
+  text-align: center;      
+}
+.items p {
+  margin-bottom: 2px; /* 💡 下の文字やボタンとのすき間だけを削ります */
+}
+.main-items img {
+  width: 128px;             
+  height: auto;             
+  margin-bottom: 10px;      
+  image-rendering: pixelated; 
+}
+.main-items img.Skills-efect-img {
+  width: 64px;       
+  margin-top: 10px;  
+  margin-bottom: 0; 
+}
+/* btn表示 */
+.items .item-btn {
+  width: 90%;
+  display: block;
+  margin: 10px auto 0 auto;
+  padding: 14px 0;
+  font-size: 18px;
+  background-color: #00213d;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  border-radius: 8px; 
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+.items .item-btn:hover {
+  background-color: #40a4fc; }
+/* レアリティ表記 */
+.rarity {
+  align-self: flex-start;    /* 💡 左詰めに配置 */
+  font-size: 11px;           /* 小さめの文字サイズ */
+  font-weight: bold;
+  padding: 2px 8px;          /* 内側の余白 */
+  border-radius: 4px;        /* 角を少し丸くする */
+  margin: 4px 0;             /* 上下のすき間 */
+}
+.rarity.common {
+  background-color: #334155; /* グレー系の背景 */
+  border: 1px solid #64748b;
+  color: #e2e8f0;
+}
+.rarity.rare {
+  background-color: #1e3a8a; /* 青系の背景 */
+  border: 1px solid #3b82f6;
+  color: #bfdbfe;
+}
+.rarity.epic {
+  background-color: #4c1d95; /* 紫系の背景 */
+  border: 1px solid #a855f7;
+  color: #f3e8ff;
+}
+
+
+/* ==========================================================================
+   フッター
+   ========================================================================== */
+.footer-links {
+  display: flex;     
+  justify-content: center; 
+  list-style: none;  
+  gap: 20px;         
+  padding: 0;        
+  margin: 0;         
+}
+
+/* ==========================================================================
+   スマホ用設定（画面幅 768px 以下）
+   ========================================================================== */
+@media (max-width: 768px) {
+  .top-items img {
+  width: 64px;
+  height: 64px;
+  image-rendering: pixelated; /* ドット絵をクッキリさせる */
+}
+  .header {
+    height: 200px; 
+    background-image: url('./picture/room02.png');
+    background-size: cover;
+  }
+  .hero-header {
+    background-image: url('./picture/house.png');
+    width: calc(100% - 20px);
+    height: 140px;
+    margin: 10px auto;
+    padding: 0 15px;
+    border: 4px double #ffffff;
+    background-position: center center;
+  }
+  .nav-list a {
+    font-size: 16px; 
+  }
+  .nav-list ul {
+    gap: 8px;    
+    font-size: 20px; 
+    width: 100%;     
+  }
+  .main-items img.Skills-efect-img {
+  width: 32px;       
+  margin-top: 10px;  
+  margin-bottom: 0; 
+}
+.items .item-btn {
+  width: 90%;
+  display: block;
+  margin: 10px auto 0 auto;
+  padding: 14px 0;
+  font-size: 13px;
+  background-color: #00213d;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  border-radius: 8px; 
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+}

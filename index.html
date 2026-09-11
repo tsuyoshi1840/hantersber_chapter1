@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>HANTER'sBer</title>
+    
+</head>
+
+
+<body>
+<header>
+      
+      <div class="header">
+      <nav class="nav-list">
+      <h1 class ="hero-header-h1">狩人の酒場</h1> 
+      <ul>
+        <li><a href="index.html">🏠TOP</a></li>
+        <li><a href="weapon.html">⚔武器</a></li>
+        <li><a href="accessories.html">💍アクセサリー</a></li>
+        <li><a href="item.html">☕消耗品</a></li>
+      </ul>
+      </nav>
+      </div>
+</header>
+     <div  class="hero-header">
+        <h1>冒険を支える<br>特別なアイテムを</h1>
+     </div>
+
+    <main>
+
+      <h3>おすすめのアイテム</h3>
+        <div class="top-items">
+                <div class="items">
+                <img src="picture/s-iron.png" alt=""><br><p>アイアンソード</p>
+                <span class="rarity common">コモン</span>
+                <br><button type="button" class="item-btn">確認する</button></br>
+            </div>
+                <div class="items">
+                <img src="picture/item000.png" alt=""><br><p>怒りのうでわ</p>
+                <span class="rarity rare">レア</span>
+                <br><button type="button" class="item-btn">確認する</button></br>
+            </div>
+                <div class="items">
+                <img src="picture/intaling.png" alt=""><br><p>イタリオンリング</p>
+                <span class="rarity epic">エピック</span>
+                <br><button type="button" class="item-btn">確認する</button></br>
+            </div>
+                <div class="items">
+                <img src="picture/ho-ri-basuta.png" alt=""><br><p>ホーリーバスター</p>
+                <span class="rarity epic">エピック</span>
+                <br><button type="button" class="item-btn">確認する</button></br>
+            </div>
+        </div>
+        <h3>カテゴリから探す</h3>
+        <div class="top-items">
+            
+              <div class="items"><img src="picture/item001.png" alt=""><br><p>バフ装備</p><br><button type="button" class="item-btn">確認する</button></br></div>
+              <div class="items"><img src="picture/item003.png" alt=""><br><p>耐性上昇</p><br><button type="button" class="item-btn">確認する</button></br></div>
+              <div class="items"><img src="picture/s-001.png" alt=""><br><p>属性</p><br><button type="button" class="item-btn">確認する</button></br></div>
+              <div class="items"><img src="picture/skill004.png" alt=""><br><p>固有スキル</p> <br><button type="button" class="item-btn">確認する</button></br></div>
+        </div>
+    </main>    
+
+
+<footer class="site-footer">
+  <ul class="footer-links">
+    <li><a href="kiyaku.html">利用規約</a></li>
+    <li><a href="policy.html">プライバシーポリシー</a></li>
+    <li><a href="conntact.html">お問い合わせ</a></li>
+  </ul>
+</footer>
+<script>
+  const buttons = document.querySelectorAll('.item-btn');
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const itemBox = e.target.closest('.items');
+      const itemName = itemBox.querySelector('p').textContent;
+
+      // 💡 指定されたアイテム名に応じてページを完全に振り分けます
+      if (itemName.includes('アイアンソード') || 
+          itemName.includes('ホーリーバスター') || 
+          itemName.includes('バフ装備') || 
+          itemName.includes('耐性上昇') || 
+          itemName.includes('属性') || 
+          itemName.includes('固有スキル')) {
+        
+        window.location.href = 'weapon.html'; // 💡 weapon.htmlへ（スペルを統一）
+
+      } else if (itemName.includes('怒りのうでわ') || 
+                 itemName.includes('イタリオンリング')) {
+        
+        window.location.href = 'accessories.html'; // 💡 accessories.htmlへ
+        
+      } else {
+        // 今後ほかのアドオンが増えた場合の予備
+        window.location.href = 'item.html';
+      }
+    });
+  });
+</script>
+
+</body>
+
+</html>
+<!-- あとやること -->
+ <!-- フッダーの修飾C -->
+  <!-- アイテムの追加A -->
+   <!-- INDEXのButton動作S clear-->
